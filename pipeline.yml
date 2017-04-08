@@ -1,3 +1,9 @@
+resource_types:
+- name: cloudformation-resource
+  type: docker-image
+  source:
+    repository: pipelineci/cloudformation-resource
+
 resources:
 - name: repo
   type: git
@@ -6,7 +12,7 @@ resources:
     branch: master
 
 - name: my-stack
-  type: cloudformation
+  type: cloudformation-resource
   source:
     name: my-stack
     aws_access_key_id: {{aws-admin-access-key-id}}
