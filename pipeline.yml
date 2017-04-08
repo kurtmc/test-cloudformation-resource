@@ -1,4 +1,10 @@
 resources:
+- name: repo
+  type: git
+  source:
+    uri: https://github.com/kurtmc/test-cloudformation-resource.git
+    branch: master
+
 - name: my-stack
   type: cloudformation
   source:
@@ -10,6 +16,8 @@ resources:
 jobs:
 - name: deploy-stack
   plan:
+    - get: repo
+      trigger: true
     - put: my-stack
       params:
-        template: repo/buck
+        template: repo/bucket.json
