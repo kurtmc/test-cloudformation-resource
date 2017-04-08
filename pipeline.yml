@@ -9,8 +9,8 @@ resources:
   type: cloudformation
   source:
     name: my-stack
-    aws_access_key_id: {{aws-access-key-id}}
-    aws_secret_access_key: {{aws-secret-access-key}}
+    aws_access_key_id: {{aws-admin-access-key-id}}
+    aws_secret_access_key: {{aws-admin-secret-access-key}}
     region: ap-southeast-2
 
 jobs:
