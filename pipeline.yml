@@ -1,0 +1,15 @@
+resources:
+- name: my-stack
+  type: cloudformation
+  source:
+    name: my-stack
+    aws_access_key_id: {{aws-access-key-id}}
+    aws_secret_access_key: {{aws-secret-access-key}}
+    region: ap-southeast-2
+
+jobs:
+- name: deploy-stack
+  plan:
+    - put: my-stack
+      params:
+        template: repo/buck
